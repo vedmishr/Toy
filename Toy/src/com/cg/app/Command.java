@@ -7,11 +7,11 @@ public class Command {
 		int vary=0;
 		String direction = null;
 		Function function=new Function();
-		String[] args = choice.split(" ");
+		String[] args = choice.split(" ");  //Split the string on basis of spaces
 		String[] separation;
 		if((args[0]).equals("PLACE")){
-			separation=args[1].split(",");
-			varx=Integer.parseInt(separation[0]);
+			separation=args[1].split(",");   //Split the string on basis of commas
+			varx=Integer.parseInt(separation[0]);  //parsing the variables
 			vary=Integer.parseInt(separation[1]);
 			direction=separation[2];
 			function.place(varx,vary,direction);
