@@ -4,6 +4,7 @@ public class Function {
 	public static int posx;
 	public static int posy;
 	public static String pdirection;
+	//Method to implement move
 	public void move(){
 		int mx=posx;
 		int my=posy;
@@ -26,7 +27,7 @@ public class Function {
 		else
 			System.out.println("Invalid position");
 	}
-	
+	//Method to implement place
 	public void place(int x,int y,String direction ){
 		boolean verdict=isValid(x,y);
 		if (verdict==true){
@@ -38,6 +39,7 @@ public class Function {
 			System.out.println("Invalid position");
 		}
 	}
+	//Method to rotate the toy leftwards
 	public void left(){
 		String ldirection=pdirection;
 		if(("NORTH").equals(ldirection)){
@@ -55,6 +57,7 @@ public class Function {
 		else
 			System.out.println("Wrong direction");
 	}
+	//Method to rotate the toy rightwards
 	public void right(){
 		String rdirection=pdirection;
 		if(("NORTH").equals(rdirection)){
@@ -72,13 +75,14 @@ public class Function {
 		else
 			System.out.println("Wrong direction");
 	}
+	//Method to validate the position of toy
 	public boolean isValid(int x,int y){
 		if(x<0 || x>4 || y<0 || y>4)
 		return false;
 		else
 	    return true;
 	}
-
+	//Method to print the output
 	public void report() {
 		System.out.println(posx+","+posy+","+pdirection);
 	}
