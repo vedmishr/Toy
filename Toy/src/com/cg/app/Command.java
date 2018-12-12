@@ -1,0 +1,32 @@
+package com.cg.app;
+
+public class Command {
+
+	public void value(String choice){
+		int varx=0;
+		int vary=0;
+		String direction = null;
+		Function function=new Function();
+		String[] args = choice.split(" ");
+		String[] separation;
+		if((args[0]).equals("PLACE")){
+			separation=args[1].split(",");
+			varx=Integer.parseInt(separation[0]);
+			vary=Integer.parseInt(separation[1]);
+			direction=separation[2];
+			function.place(varx,vary,direction);
+		}			
+		if((args[0]).equals("MOVE")){
+			function.move();
+		}
+		if((args[0]).equals("LEFT")){
+			function.left();
+		}
+		if((args[0]).equals("RIGHT")){
+			function.right();
+		}
+		if((args[0]).equals("REPORT")){
+			function.report();
+		}
+	}
+}
